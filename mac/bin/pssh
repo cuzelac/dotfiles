@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh -o StrictHostKeyChecking=no $(pip $1)
+#ssh $(pip $1)

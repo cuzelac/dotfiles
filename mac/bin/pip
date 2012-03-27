@@ -1,0 +1,5 @@
+#!/bin/bash
+
+NAME=$1
+
+prlctl exec $NAME ip addr | grep 'inet ' | grep eth | perl -p -e 's{.*inet\s+(\S+)/\d+\s.*}{$1}'
