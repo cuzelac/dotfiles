@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -e $1 ]; then
+  echo must provide vm name
+  exit 1
+fi
+
 NAME=$1
 
 prlctl exec $NAME ip addr | grep 'inet ' | grep eth | perl -p -e 's{.*inet\s+(\S+)/\d+\s.*}{$1}'

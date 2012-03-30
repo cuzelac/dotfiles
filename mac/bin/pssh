@@ -1,4 +1,10 @@
 #!/bin/bash
 
+if [ -e $1 ]; then
+  echo must provide vm name/uuid
+  exit 1
+fi
+
+NAME=$1
+
 ssh -o StrictHostKeyChecking=no $(pip $1)
-#ssh $(pip $1)
