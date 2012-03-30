@@ -1,0 +1,10 @@
+[user]
+	email = cuzelac@gmail.com
+	name = Chris Uzelac
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	s = status -s
