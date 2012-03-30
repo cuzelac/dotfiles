@@ -6,9 +6,15 @@ BASE=c0211015-8f0e-4bda-a86b-c499b8075964
 prlctl clone $BASE --name $1
 sleep 5
 prlctl start $1
-## need a better way to wait...
 
-sleep 25
-prlctl exec $1 /root/setup.sh $1
+echo "Waiting for $NAME to come up..."
+while true; do
+  sleep 1
+  prlctl exec $NAME id >/dev/null 2>&1 && break
+done
+
+echo "Done!  Reconfiguring hostname/network."
+
+prlctl exec $NAME /root/setup.sh $NAME
 
 echo "rebooting VM.  It will be ready once it comes up."
