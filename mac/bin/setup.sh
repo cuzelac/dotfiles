@@ -1,4 +1,5 @@
 #!/bin/bash
+# put this script in root's homedir on your clone'able template
 
 HOSTNAME=$1
 
