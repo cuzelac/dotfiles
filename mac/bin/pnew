@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=$1
-BASE=593315d1-2856-4ef9-b43e-7b33a036e104
+BASE=ab287325-3c35-4d6f-a63c-0417c60dfb15
 
 prlctl clone $BASE --name $1
 sleep 5
