@@ -1,0 +1,2 @@
+@reboot /data/home/cuzelac/update_afraid.sh > /dev/null 2>&1
+@reboot /bin/bash -c "cd /data/home/cuzelac && /usr/bin/screen -dmS irc /usr/bin/irssi" > /dev/null 2>&1
