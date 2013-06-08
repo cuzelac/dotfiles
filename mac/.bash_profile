@@ -1,22 +1,5 @@
-set -o vi
-
-export PS1='\u@\h:[\w]$ '
-export EDITOR=vi
-export LSCOLORS='fxgxcxdxDxegedabagacad'
-
-#alias irc='ssh harlequin -t screen -dr irc'
-alias irc='ssh goat.scooterfarm.com -t screen -dr irc'
-alias ls='ls -G'
-
-alias hep='ssh -p 222 cuz@hep.cat'
-
-alias sshvm='ssh -A 192.168.64.129'
-
-keychain ~/.ssh/id_dsa > /dev/null 2>&1
-
-if [ -f ~/.keychain/`hostname`-sh ]
-then
-  . ~/.keychain/`hostname`-sh
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
 fi
 
 ##
