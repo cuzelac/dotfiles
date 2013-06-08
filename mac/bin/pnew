@@ -3,18 +3,24 @@
 NAME=$1
 BASE=ab287325-3c35-4d6f-a63c-0417c60dfb15
 
-prlctl clone $BASE --name $1
-sleep 5
-prlctl start $1
+prlctl clone $BASE --name $NAME
 
-echo "Waiting for $NAME to come up..."
-while true; do
-  sleep 1
-  prlctl exec $NAME id >/dev/null 2>&1 && break
-done
+if [[ $? != 0 ]]
+then
+  exit 1
+fi
 
-echo "Done!  Reconfiguring hostname/network."
+echo "making cpu/mem hotpluggable"
+prlctl set $NAME --cpu-hotplug on >/dev/null 2>&1
+prlctl set $NAME --mem-hotplug on >/dev/null 2>&1
 
+echo "Starting VM to configure network"
+prlctl start $NAME
+pwait $NAME
+
+echo "rebooting VM one last time"
 prlctl exec $NAME /root/setup.sh $NAME
 
-echo "rebooting VM.  It will be ready once it comes up."
+sleep 1
+pwait $NAME
+pssh  $NAME
