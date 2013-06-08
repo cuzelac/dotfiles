@@ -1,0 +1,5 @@
+#!/bin/bash
+
+prlctl start $1
+pwait $1
+pssh $1
