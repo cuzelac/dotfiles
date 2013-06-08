@@ -1,15 +1,15 @@
 [user]
-	email = cuzelac@gmail.com
-	name = Chris Uzelac
+    email = cuzelac@gmail.com
+    name = Chris Uzelac
 [mergetool]
-  keepBackup = true
+    keepBackup = true
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-  ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
 [alias]
-	s = status -s
-  df =diff --name-only
-  tree = log --oneline --decorate --all --graph
+    s = status -s
+    df =diff --name-only
+    tree = log --oneline --decorate --all --graph
