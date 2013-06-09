@@ -7,7 +7,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-set -o vim
+set -o vi
 export EDITOR=vim
 export LSCOLORS='fxgxcxdxDxegedabagacad'
 
