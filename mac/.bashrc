@@ -13,7 +13,7 @@ export LSCOLORS='fxgxcxdxDxegedabagacad'
 
 # This puts your branch in your PS1 if you're in a git repo
 PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
-\u@\h.\[\e[0;36m\]vm\[\e[0m\] \D{%s} [\w]
+\u@\h \D{%s} [\w]
 $ "
 
 # this PS1 does the same git branch as above
@@ -34,4 +34,4 @@ alias grep='grep --color'
 
 # User specific aliases and functions
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.gem/ruby/1.8/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
