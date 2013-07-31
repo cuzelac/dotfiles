@@ -1,28 +1,13 @@
 # .bashrc
 
-. ~/.git-completion.sh
+test -e .bash_prompt && . .bash_prompt
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
 
 set -o vi
 export EDITOR=vim
 export LSCOLORS='fxgxcxdxDxegedabagacad'
 
-# This puts your branch in your PS1 if you're in a git repo
-PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
-\u@\h \D{%s} [\w]
-$ "
-
-# this PS1 does the same git branch as above
-# but also puts a blue '.vm' at the end of a hostname
-# use it as the default .bashrc for vms
-
-#PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
-#\u@\h.\[\e[0;36m\]vm\[\e[0m\] \D{%s} [\w]
-#$ "
 
 alias irc='ssh goat.scooterfarm.com -t screen -dr irc'
 alias ls='ls -G'

@@ -1,0 +1,58 @@
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+  export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
+if tput setaf 1 &> /dev/null; then
+  tput sgr0
+  if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+    RED=$(tput setaf 9)
+    ORANGE=$(tput setaf 172)
+    GREEN=$(tput setaf 83)
+    PURPLE=$(tput setaf 129)
+    WHITE=$(tput setaf 256)
+  else
+    RED=$(tput setaf 1)
+    ORANGE=$(tput setaf 3)
+    GREEN=$(tput setaf 2)
+    PURPLE=$(tput setaf 5)
+    WHITE=$(tput setaf 7)
+  fi
+  BOLD=$(tput bold)
+  RESET=$(tput sgr0)
+else
+  RED=BRed
+  ORANGE="\033[1;33m"
+  GREEN="\033[1;32m"
+  PURPLE="\033[1;35m"
+  WHITE="\033[1;37m"
+  BOLD=""
+  RESET="\033[m"
+fi
+
+export RED
+export ORANGE
+export GREEN
+export PURPLE
+export WHITE
+export BOLD
+export RESET
+
+. ~/.git-completion.sh
+
+# This puts your branch in your PS1 if you're in a git repo
+export PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
+\u@\h \D{%s} [\w]
+$ "
+
+# this PS1 does the same git branch as above
+# but also puts a blue '.vm' at the end of a hostname
+# use it as the default .bashrc for vms
+
+#PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
+#\u@\h.\[\e[0;36m\]vm\[\e[0m\] \D{%s} [\w]
+#$ "
+
+#export PS1='\[${BOLD}${RED}\]\u\[$RESET\]@\[$PURPLE\]\h\[$RESET\]:\[$GREEN\]\w\[$RESET\]\$ '
+export PS2='\[$ORANGE\]=> \[$RESET\]'
