@@ -13,3 +13,4 @@
     s = status -s
     df =diff --name-only
     tree = log --oneline --decorate --all --graph
+    permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
