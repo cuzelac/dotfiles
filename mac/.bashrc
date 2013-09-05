@@ -9,6 +9,7 @@ set -o vi
 export EDITOR=vim
 export LSCOLORS='fxgxcxdxDxegedabagacad'
 
+umask 022
 
 # User specific aliases and functions
 
