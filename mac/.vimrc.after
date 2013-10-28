@@ -2,3 +2,8 @@ set textwidth=0
 set background=dark
 set history=1000
 set visualbell
+
+colorscheme vividchalk
+
+:nmap <silent> <leader>dd <Plug>DashSearch
+:nmap <silent> <leader>dg <Plug>DashGlobalSearch
