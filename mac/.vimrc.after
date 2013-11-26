@@ -7,5 +7,5 @@ colorscheme vividchalk
 
 :nmap <silent> <leader>dd <Plug>DashSearch
 :nmap <silent> <leader>dg <Plug>DashGlobalSearch
-:nmap <silent> <leader>cl :setlocal number!<cr>
-:nmap <silent> <leader>cw :setlocal wrap!<cr>
+:nmap <silent> <leader>vl :setlocal number!<cr>
+:nmap <silent> <leader>vw :setlocal wrap!<cr>
