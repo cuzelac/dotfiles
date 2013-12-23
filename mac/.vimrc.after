@@ -9,3 +9,4 @@ colorscheme vividchalk
 :nmap <silent> <leader>dg <Plug>DashGlobalSearch
 :nmap <silent> <leader>vn :setlocal number!<cr>
 :nmap <silent> <leader>vw :setlocal wrap!<cr>
+:nmap <silent> <leader>vp :setlocal paste!<cr>
