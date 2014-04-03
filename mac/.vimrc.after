@@ -2,6 +2,7 @@ set textwidth=0
 set background=dark
 set history=1000
 set visualbell
+set mouse=a
 
 colorscheme vividchalk
 
