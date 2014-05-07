@@ -13,8 +13,8 @@ colorscheme vividchalk
 :nmap <silent> <leader>vp :setlocal paste!<cr>
 
 " Tab Setup
-nnoremap th :tabnext<CR>
-nnoremap tl :tabprev<CR>
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
 nnoremap tn :TabooOpen<Space>
 nnoremap tr :TabooRename<Space>
 nnoremap tt :tabnew<CR>
