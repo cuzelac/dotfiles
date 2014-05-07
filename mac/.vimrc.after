@@ -11,3 +11,11 @@ colorscheme vividchalk
 :nmap <silent> <leader>vn :setlocal number!<cr>
 :nmap <silent> <leader>vw :setlocal wrap!<cr>
 :nmap <silent> <leader>vp :setlocal paste!<cr>
+
+" Tab Setup
+nnoremap th :tabnext<CR>
+nnoremap tl :tabprev<CR>
+nnoremap tn :TabooOpen<Space>
+nnoremap tr :TabooRename<Space>
+nnoremap tt :tabnew<CR>
+nnoremap tq :tabclose<CR>
