@@ -8,9 +8,12 @@ colorscheme vividchalk
 
 :nmap <silent> <leader>dd <Plug>DashSearch
 :nmap <silent> <leader>dg <Plug>DashGlobalSearch
-:nmap <silent> <leader>vn :setlocal number!<cr>
-:nmap <silent> <leader>vw :setlocal wrap!<cr>
-:nmap <silent> <leader>vp :setlocal paste!<cr>
+
+:nmap <leader>vn :setlocal number!<cr>
+:nmap <leader>vw :setlocal wrap!<cr>
+:nmap <leader>vp :setlocal paste!<cr>
+
+:nmap <leader>gg :Ack<Space>
 
 " Tab Setup
 nnoremap tl :tabnext<CR>
@@ -18,4 +21,5 @@ nnoremap th :tabprev<CR>
 nnoremap tn :TabooOpen<Space>
 nnoremap tr :TabooRename<Space>
 nnoremap tt :tabnew<CR>
+nnoremap tc :tabclose<CR>
 nnoremap tq :tabclose<CR>
