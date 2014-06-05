@@ -12,8 +12,7 @@ colorscheme vividchalk
 :nmap <leader>vn :setlocal number!<cr>
 :nmap <leader>vw :setlocal wrap!<cr>
 :nmap <leader>vp :setlocal paste!<cr>
-
-:nmap <leader>gg :Ack<Space>
+:nmap <leader>vfr :set ft=ruby<cr>
 
 " Tab Setup
 nnoremap tl :tabnext<CR>
