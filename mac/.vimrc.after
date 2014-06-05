@@ -12,9 +12,9 @@ colorscheme vividchalk
 :nmap <leader>vn :setlocal number!<cr>
 :nmap <leader>vw :setlocal wrap!<cr>
 :nmap <leader>vp :setlocal paste!<cr>
-:nmap <leader>vfr :set ft=ruby<cr>
-:nmap <leader>vma :setlocal mouse=a<cr>
-:nmap <leader>vmv :setlocal mouse=v<cr>
+:nmap <leader>vfr :setlocal ft=ruby<cr>
+:nmap <leader>vma :set mouse=a<cr>
+:nmap <leader>vmv :set mouse=v<cr>
 
 " Tab Setup
 nnoremap tl :tabnext<CR>
