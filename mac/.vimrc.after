@@ -2,7 +2,7 @@ set textwidth=0
 set background=dark
 set history=1000
 set visualbell
-set mouse=a
+set mouse=v
 
 colorscheme vividchalk
 
@@ -13,6 +13,8 @@ colorscheme vividchalk
 :nmap <leader>vw :setlocal wrap!<cr>
 :nmap <leader>vp :setlocal paste!<cr>
 :nmap <leader>vfr :set ft=ruby<cr>
+:nmap <leader>vma :setlocal mouse=a<cr>
+:nmap <leader>vmv :setlocal mouse=v<cr>
 
 " Tab Setup
 nnoremap tl :tabnext<CR>
