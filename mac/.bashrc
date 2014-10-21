@@ -1,7 +1,10 @@
 # .bashrc
 
-test -e .bash_prompt && . .bash_prompt
-test -e .bash_aliases && . .bash_aliases
+if shopt -q login_shell
+then
+  test -e .bash_prompt && . .bash_prompt
+  test -e .bash_aliases && . .bash_aliases
+fi
 
 # Source global definitions
 
