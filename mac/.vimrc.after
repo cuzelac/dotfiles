@@ -9,6 +9,9 @@ colorscheme vividchalk
 :nmap <silent> <leader>dd <Plug>DashSearch
 :nmap <silent> <leader>dg <Plug>DashGlobalSearch
 
+" disable shortcuts for narrowregion to make NERDTree default bindings work
+:unmap <leader>nr
+
 :nmap <leader>vn :setlocal number!<cr>
 :nmap <leader>vw :setlocal wrap!<cr>
 :nmap <leader>vp :setlocal paste!<cr>
