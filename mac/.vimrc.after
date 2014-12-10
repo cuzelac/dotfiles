@@ -19,6 +19,15 @@ colorscheme vividchalk
 :nmap <leader>vma :set mouse=a<cr>
 :nmap <leader>vmv :set mouse=v<cr>
 
+" NERDCommenter config
+" kill the stupid Janus <leader>cd crap
+:unmap <leader>cd
+:nmap <leader>c :call NERDComment('n','Toggle')<cr>
+:vmap <leader>c :call NERDComment('v','Toggle')<cr>
+
+:nmap <leader>b :BuffergatorToggle<CR>
+:nmap <leader>B :BuffergatorTabsOpen<CR>
+
 " Tab Setup
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprev<CR>
