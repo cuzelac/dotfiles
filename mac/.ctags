@@ -2,5 +2,12 @@
 --tag-relative=yes
 --exclude=vendor
 --exclude=.git
+--exclude=*.js
 --verbose=no
--f .git/tags
+-f ./tags
+--langdef=coffee
+--langmap=coffee:.coffee
+--regex-coffee=/^([A-Z][A-Za-z.]*)[ \t]*=[ \t]*[A-Za-z.]+\.(create|extend)(\(|$| |\{)/\1/c,class/
+--regex-coffee=/(^|=[ \t])*class ([A-Za-z.]+)( extends [A-Za-z.]+)?$/\2/c,class/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?@?([_A-Za-z.]+)[ \t]*:.*[-=]>.*$/\3/f,function/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?([_A-Za-z.]+)[ \t]+=.*[-=]>.*$/\3/f,function/

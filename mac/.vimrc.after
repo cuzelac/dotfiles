@@ -25,8 +25,8 @@ colorscheme vividchalk
 :nmap <leader>c :call NERDComment('n','Toggle')<cr>
 :vmap <leader>c :call NERDComment('v','Toggle')<cr>
 
-:nmap <leader>b :BuffergatorToggle<CR>
-:nmap <leader>B :BuffergatorTabsOpen<CR>
+:nmap <leader>B :BuffergatorToggle<CR>
+:nmap <leader>b :BuffergatorTabsOpen<CR>
 
 " Tab Setup
 nnoremap tl :tabnext<CR>

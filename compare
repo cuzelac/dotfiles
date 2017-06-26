@@ -1,0 +1,17 @@
+#!/usr/bin/ruby
+
+require 'logger'
+
+$logger = Logger.new(STDERR)
+$logger.level = Logger::DEBUG
+
+dotfile_dir = File.join(File.dirname(__FILE__), 'mac')
+
+Dir.glob(File.join(dotfile_dir, ".*")) do |path|
+  next if path =~ /\/\.\.?$/
+  basename = File.basename(path)
+  home_location = File.expand_path(File.join("~", basename))
+
+  print `diff -Naur #{path} #{home_location}`
+  #print `diff -Naur #{home_location} #{path}`
+end

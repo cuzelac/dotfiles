@@ -1,0 +1,39 @@
+#!/usr/bin/ruby
+
+require 'logger'
+require 'fileutils'
+
+$logger = Logger.new(STDERR)
+$logger.level = Logger::INFO
+#$logger.level = Logger::DEBUG
+
+dotfile_dir = File.join(File.dirname(__FILE__), 'mac')
+$logger.debug "dotfile_dir: #{dotfile_dir}"
+
+Dir.glob(File.join(dotfile_dir, ".*")) do |backup_path|
+  next if backup_path =~ /\/\.\.?$/
+  basename = File.basename(backup_path)
+  home_location = File.expand_path(File.join("~", basename))
+
+  diff_cmd = "diff -Naur #{backup_path} #{home_location}"
+
+  $logger.debug "running diff: #{diff_cmd}"
+
+  diff = `#{diff_cmd}`
+
+  if diff.length > 0
+    print diff
+    puts '-----------------'
+    puts ' Update? (Y/n) '
+    puts '-----------------'
+
+    input = gets.chomp
+    $logger.debug "input was: #{input}, type #{input.class}"
+    if input == 'Y'
+      puts "Updating!"
+      FileUtils.cp(home_location, backup_path)
+    end
+  end
+end
+
+# vim: ft=ruby

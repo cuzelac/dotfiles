@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+require 'logger'
+require 'fileutils'
+
+$logger = Logger.new(STDERR)
+$logger.level = Logger::DEBUG
+
+dotfile_dir = File.join(File.dirname(__FILE__), 'mac')
+
+Dir.glob(File.join(dotfile_dir, ".*")) do |backup_path|
+  next if backup_path =~ /\/\.\.?$/
+  basename = File.basename(backup_path)
+  home_location = File.expand_path(File.join("~", basename))
+
+  $logger.debug "cp #{backup_path} #{home_location}"
+  FileUtils.cp_r(backup_path, home_location)
+end

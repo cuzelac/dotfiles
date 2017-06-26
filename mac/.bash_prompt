@@ -42,7 +42,6 @@ export RESET
 . ~/.git-completion.sh
 
 # This puts your branch in your PS1 if you're in a git repo
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
 export PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
 \u@\h \D{%s} [\w]
 $ "
@@ -51,8 +50,7 @@ $ "
 # but also puts a blue '.vm' at the end of a hostname
 # use it as the default .bashrc for vms
 
-#export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}.vm\007"'
-#export PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
+#PS1="---\$?\$(__git_ps1 \"\n   :: %s ::\")
 #\u@\h.\[\e[0;36m\]vm\[\e[0m\] \D{%s} [\w]
 #$ "
 

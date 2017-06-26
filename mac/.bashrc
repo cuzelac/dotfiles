@@ -1,19 +1,21 @@
-# .bashrc
-
-if shopt -q login_shell
-then
-  test -e .bash_prompt && . .bash_prompt
-  test -e .bash_aliases && . .bash_aliases
+########################################################
+# bootstrap Square bashrc; please don't change this bit.
+########################################################
+if [[ -f "$SQUARE_HOME/config_files/square/bashrc" ]]; then
+  source $SQUARE_HOME/config_files/square/bashrc
 fi
+########################################################
 
-# Source global definitions
 
-set -o vi
-export EDITOR=vim
-export LSCOLORS='fxgxcxdxDxegedabagacad'
+###########################################
+# Feel free to make your own changes below.
+###########################################
 
-umask 022
+# uncomment to automatically `bundle exec` common ruby commands
+# if [[ -f "$SQUARE_HOME/config_files/square/bundler-exec.sh" ]]; then
+#   source $SQUARE_HOME/config_files/square/bundler-exec.sh
+# fi
 
-# User specific aliases and functions
-
-PATH=$PATH:$HOME/.gem/ruby/1.8/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
