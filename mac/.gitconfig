@@ -1,32 +1,36 @@
 [user]
-	name = Chris Uzelac
-	email = cuzelac@gmail.com
+  name = Chris Uzelac
+  email = cuzelac@gmail.com
 [push]
-	config = default
-	default = current
+  config = default
+  default = current
 [diff]
-	renames = true
+  renames = true
 [status]
-	showUntrackedFiles = all
+  showUntrackedFiles = all
 [branch]
-	autosetupmerge = true
+  autosetupmerge = true
 [merge]
-	summary = true
-	conflictstyle = diff3
+  summary = true
+  conflictstyle = diff3
 [rebase]
-	autosquash = true
+  autosquash = true
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 [alias]
-	lg = log --all --graph --abbrev-commit --date=relative --pretty=format:'%C(bold blue)%h - %C(reset)%C(green)(%ad)%C(reset) - %s %C(dim)- %an%C(reset)%C(yellow)%d'
-	lgb = log --graph --abbrev-commit --date=relative --pretty=format:'%C(bold blue)%h - %C(reset)%C(green)(%ad)%C(reset) - %s %C(dim)- %an%C(reset)%C(yellow)%d'
+  lg = log --all --graph --abbrev-commit --date=relative --pretty=format:'%C(bold blue)%h - %C(reset)%C(green)(%ad)%C(reset) - %s %C(dim)- %an%C(reset)%C(yellow)%d'
+  lgb = log --graph --abbrev-commit --date=relative --pretty=format:'%C(bold blue)%h - %C(reset)%C(green)(%ad)%C(reset) - %s %C(dim)- %an%C(reset)%C(yellow)%d'
+  s = status -s
+  df =diff --name-only
+  tree = log --oneline --decorate --all --graph
+  permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
 
 [rerere]
-	enabled = 1
+  enabled = 1
 [include]
-	path = ~/.gitconfig_local
+  path = ~/.gitconfig_local
