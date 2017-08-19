@@ -4,6 +4,7 @@ alias ls='ls -G'
 alias utcdate='TZ=UTC date'
 alias vir='vim -R'
 alias gotags='gotags  -f ./tags -R .'
+alias fix-finder="bash -c 'rm ~/Library/Preferences/com.apple.finder.plist&&killall Finder'"
 
 function rebundle() {
   if [[ -e ./.ruby-gemset ]]
