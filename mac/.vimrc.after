@@ -1,8 +1,12 @@
-set textwidth=0
+set ai
 set background=dark
+set expandtab
 set history=1000
-set visualbell
 set mouse=v
+set nomesg
+set sw=2
+set textwidth=0
+set visualbell
 
 colorscheme vividchalk
 

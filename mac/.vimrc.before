@@ -6,3 +6,5 @@ let g:NERDCreateDefaultMappings = 0
 call janus#disable_plugin('snipmate')"
 call janus#disable_plugin('easymotion')"
 call janus#disable_plugin('nrrwrgn')"
+
+runtime macros/matchit.vim
