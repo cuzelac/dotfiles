@@ -16,6 +16,9 @@ colorscheme vividchalk
 " disable shortcuts for narrowregion to make NERDTree default bindings work
 :unmap <leader>nr
 
+:unmap <leader>n
+:nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
 :nmap <leader>vn :setlocal number!<cr>
 :nmap <leader>vw :setlocal wrap!<cr>
 :nmap <leader>vp :setlocal paste!<cr>
@@ -40,3 +43,23 @@ nnoremap tr :TabooRename<Space>
 nnoremap tt :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tq :tabclose<CR>
+
+" works around a problem I was having with cmder/cygwin/vim where vertical
+" splits wouldn't properly resize when the window height was increased.
+" For some reason, shelling out and redrawing would fix. I don't know exactly
+" what was wrong (likely to do with the buffer size in cmder causing it to
+" report the incorrect window size on resize) or why this fixes it.
+
+" this manually works around the awful resize bug
+:nmap <silent> <leader>vr :!:<cr> :redraw!<cr>
+
+" This shells out after start and calls refresh
+" The timings are important - the redraw needs to happen ~150ms after the
+" shell-out
+
+func ShellAndRedraw(timer)
+  silent! call execute("!:")
+  silent! call timer_start(50, {-> execute("redraw!")})
+endfunc
+
+autocmd VimEnter * silent! call timer_start(50, 'ShellAndRedraw')

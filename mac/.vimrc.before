@@ -3,6 +3,9 @@ let g:autotagTagsFile = ".git/tags"
 let g:buffergator_suppress_keymaps = 1
 let g:NERDCreateDefaultMappings = 0
 
+let NERDTreeMinimalUI = 1
+"let NERDTreeDirArrows = 1
+
 call janus#disable_plugin('snipmate')"
 call janus#disable_plugin('easymotion')"
 call janus#disable_plugin('nrrwrgn')"
