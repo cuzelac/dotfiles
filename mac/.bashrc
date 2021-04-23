@@ -5,6 +5,7 @@ then
   test -e .bash_prompt && . .bash_prompt
   test -e .bash_aliases && . .bash_aliases
   test -e .ssh/environment && . .ssh/environment > /dev/null
+  ssh_agent_load_or_start # defined in .bash_aliases
   shopt -s checkwinsize
 fi
 
