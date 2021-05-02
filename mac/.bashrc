@@ -18,3 +18,6 @@ export GOROOT=/usr/local/opt/go/libexec
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add local npm path after running `npm set prefix ~/npm`
+export PATH="$PATH:$HOME/npm/bin"
