@@ -44,6 +44,8 @@ nnoremap tt :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tq :tabclose<CR>
 
+nnoremap <Leader>a :Ack!<Space>
+
 " works around a problem I was having with cmder/cygwin/vim where vertical
 " splits wouldn't properly resize when the window height was increased.
 " For some reason, shelling out and redrawing would fix. I don't know exactly
